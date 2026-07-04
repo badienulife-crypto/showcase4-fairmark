@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Fairmark Motors — Certified Pre-Owned Cars &amp; SUVs, Ontario | Every Car, Fully Known</title>
+<meta name="description" content="Certified pre-owned cars and SUVs in Ontario. Fair no-haggle pricing, full history on every vehicle, financing built in — browse, finance, and book online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="%231F5FFF"/><path d="M9 16.5l4.5 4.5L23 11.5" fill="none" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Fairmark Motors home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="8" fill="var(--cobalt)"/><path d="M9 16.5l4.5 4.5L23 11.5" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-word">Fairmark<em>Motors</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="shop.html">Inventory</a>
+      <a href="#financing">Financing</a>
+      <a href="#how">How it works</a>
+      <a href="#sell">Sell your car</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+18005550187">1-800-555-0187</a>
+      <a class="btn btn-primary btn-sm" href="shop.html">Browse inventory</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="shop.html">Inventory</a>
+    <a href="#financing">Financing</a>
+    <a href="#how">How it works</a>
+    <a href="#sell">Sell your car</a>
+    <a class="btn btn-primary" href="shop.html">Browse inventory</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Certified pre-owned · Greater Toronto Area</p>
+      <h1>Trusted. Certified.<br>Automobiles.</h1>
+      <p class="hero-sub">Certified pre-owned, fair no-haggle pricing, and the full history on
+        every vehicle — browse, finance, and book online.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="shop.html">Browse inventory</a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+      <ul class="hero-proof" aria-label="Key assurances">
+        <li><strong>172</strong><span>point inspection</span></li>
+        <li><strong>7-day</strong><span>/ 750 km return</span></li>
+        <li><strong>$0</strong><span>haggling, ever</span></li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-sweep">
+        <img src="images/hero-car.webp" alt="" width="800" height="533" fetchpriority="high">
+      </div>
+      <div class="hero-chip">
+        <span class="chip-status"><i></i>Certified · Available</span>
+        <span class="chip-title">2021 Tesla Model 3 SR+</span>
+        <span class="chip-price">$33,450 <em>· from $521/mo</em></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- quick search card (wired to the shop page at M2) -->
+  <form class="hero-search" action="shop.html" method="get" aria-label="Quick inventory search">
+    <div class="hs-field">
+      <label for="hsMake">Make</label>
+      <select id="hsMake" name="make">
+        <option value="">Any make</option>
+        <option>Toyota</option><option>Honda</option><option>Mazda</option><option>Lexus</option>
+        <option>Tesla</option><option>Ford</option><option>Hyundai</option><option>BMW</option>
+      </select>
+    </div>
+    <div class="hs-field">
+      <label for="hsBody">Body type</label>
+      <select id="hsBody" name="body">
+        <option value="">Any body</option>
+        <option>SUV</option><option>Sedan</option><option>Truck</option><option>Hatchback</option>
+      </select>
+    </div>
+    <div class="hs-field">
+      <label for="hsBudget">Max price</label>
+      <select id="hsBudget" name="max">
+        <option value="">No max</option>
+        <option value="25000">$25,000</option>
+        <option value="35000">$35,000</option>
+        <option value="45000">$45,000</option>
+        <option value="60000">$60,000</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Search <span class="hs-count">14 cars</span></button>
+  </form>
+
+  <!-- scrolling inventory row -->
+  <div class="home-row">
+    <div class="hr-head">
+      <span class="hr-title">Fresh in stock</span>
+      <a class="hr-all" href="shop.html">View all inventory →</a>
+    </div>
+    <div class="hr-wrap" aria-label="Current inventory (scrolling)">
+      <div class="hr-track" id="homeRow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trust" aria-label="Why buy from Fairmark">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3.5V11c0 5-3.4 8.8-8 11-4.6-2.2-8-6-8-11V5.5L12 2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 9.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>172-point certification</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v4h4M10 12h5M10 15.5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <span>Full history report on every car</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 108-8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4 4v5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>7-day / 750 km return</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16V7h11v9M13 10h5l4 4v2h-9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+      <span>Home delivery in Ontario</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.6 2.6L21 11a2 2 0 010 2.8L13.8 21a2 2 0 01-2.8 0L2.6 12.6V4a1.4 1.4 0 011.4-1.4h8.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="7.5" r="1.6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+      <span>No-haggle pricing</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="sec-head">
+      <h2>Buying a car, minus the hard part</h2>
+      <p>Three steps. No pressure at any of them.</p>
+    </div>
+    <ol class="how-steps">
+      <li class="how-step">
+        <span class="how-n num" aria-hidden="true">1</span>
+        <h3>Browse &amp; finance online</h3>
+        <p>Every car lists its full history, a fair no-haggle price, and a real payment
+          estimate — work it all out from your couch.</p>
+      </li>
+      <li class="how-step">
+        <span class="how-n num" aria-hidden="true">2</span>
+        <h3>Book a test drive — or delivery</h3>
+        <p>Pick a time slot online, or skip the visit entirely and have the car
+          delivered anywhere in Ontario.</p>
+      </li>
+      <li class="how-step">
+        <span class="how-n num" aria-hidden="true">3</span>
+        <h3>Drive it for 7 days</h3>
+        <p>Keep it or return it — 7 days / 750&nbsp;km to make sure it's the one.
+          No explanations needed.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FINANCING TEASER ============ -->
+<section class="fin" id="financing">
+  <div class="fin-inner">
+    <div class="fin-copy">
+      <h2>Know your payment before you visit</h2>
+      <p>Set a price, a down payment, and a term — the estimate updates as you type.
+        Every vehicle page has the full calculator prefilled with that car.</p>
+      <ul class="fin-points">
+        <li>Terms from 36 to 84 months</li>
+        <li>Trade-ins credited up front</li>
+        <li>Pre-qualify online in about a minute</li>
+      </ul>
+      <a class="btn btn-ghost" href="shop.html">Browse cars in your budget</a>
+    </div>
+    <form class="fin-calc" aria-label="Quick payment estimate">
+      <div class="fin-fields">
+        <label class="c-field"><span>Vehicle price</span>
+          <input id="fcPrice" type="number" inputmode="numeric" value="33450" min="0" step="500"></label>
+        <label class="c-field"><span>Down payment</span>
+          <input id="fcDown" type="number" inputmode="numeric" value="3000" min="0" step="500"></label>
+        <label class="c-field"><span>Term</span>
+          <select id="fcTerm">
+            <option value="36">36 months</option><option value="48">48 months</option>
+            <option value="60">60 months</option><option value="72">72 months</option>
+            <option value="84" selected>84 months</option>
+          </select></label>
+        <label class="c-field"><span>APR %</span>
+          <input id="fcApr" type="number" inputmode="decimal" value="7.99" min="0" max="30" step="0.25"></label>
+      </div>
+      <div class="fin-out">
+        <span class="co-label">Estimated payment <span class="calc-demo">Illustrative</span></span>
+        <p class="co-monthly"><span class="num" id="fcMonthly">$521</span><em>/mo</em></p>
+        <p class="fin-note">Estimate only — taxes and licensing extra. Rates are illustrative for this demo.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ WHY FAIRMARK ============ -->
+<section class="why">
+  <div class="why-inner">
+    <div class="sec-head">
+      <h2>Why people buy here</h2>
+      <p>The opposite of the stereotypical used-car lot — on purpose.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>No-haggle pricing</h3>
+        <p>The price on the card is the price you pay. We benchmark against the
+          Ontario market weekly, so it's fair on day one.</p>
+      </div>
+      <div class="why-card">
+        <h3>172-point certification</h3>
+        <p>Every car passes the same inspection — mechanical, electrical, cosmetic —
+          before it earns the badge and a spot on the lot.</p>
+      </div>
+      <div class="why-card">
+        <h3>The full history, always</h3>
+        <p>Accident record, service history, ownership count — on every listing,
+          before you ask. A car with a story is priced like one.</p>
+      </div>
+      <div class="why-card">
+        <h3>Ontario, door to door</h3>
+        <p>Test drive in the GTA or get any car delivered province-wide — with the
+          same 7-day / 750&nbsp;km return either way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELL / TRADE ============ -->
+<section class="sell" id="sell">
+  <div class="sell-inner">
+    <div class="sell-copy">
+      <h2>Sell us your car — even if you don't buy ours</h2>
+      <p>Answer three questions, get an instant estimate, and we'll firm it up with a
+        15-minute inspection. Money the same day.</p>
+    </div>
+    <form class="sell-widget" aria-label="Instant offer estimate (demo)">
+      <div class="sell-fields">
+        <label class="c-field"><span>Year</span>
+          <select id="soYear"></select></label>
+        <label class="c-field"><span>Make</span>
+          <select id="soMake">
+            <option>Toyota</option><option>Honda</option><option>Mazda</option><option>Hyundai</option>
+            <option>Ford</option><option>Chevrolet</option><option>BMW</option><option>Mercedes-Benz</option>
+            <option>Tesla</option><option>Other</option>
+          </select></label>
+        <label class="c-field"><span>Mileage</span>
+          <select id="soKm">
+            <option value="40000">Under 60,000 km</option>
+            <option value="80000" selected>60,000 – 100,000 km</option>
+            <option value="120000">100,000 – 140,000 km</option>
+            <option value="170000">140,000 km +</option>
+          </select></label>
+      </div>
+      <button class="btn btn-primary" type="submit" id="soGo">Get my instant estimate</button>
+      <div class="sell-result" id="soResult" hidden>
+        <span class="co-label">Illustrative offer range <span class="calc-demo">Demo</span></span>
+        <p class="sell-range num" id="soRange">$14,200 – $16,100</p>
+        <p class="fin-note">A real offer would follow a quick inspection. This demo estimate just landed
+          in the <a href="admin.html">staff dashboard</a> as a lead.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CLOSING CTA ============ -->
+<section class="closing">
+  <div class="closing-inner">
+    <h2>Your next car is fully known.</h2>
+    <p>Browse the live inventory — every car certified, priced fairly, and ready for a
+      7-day trial.</p>
+    <div class="closing-ctas">
+      <a class="btn btn-primary" href="shop.html">Browse inventory</a>
+      <a class="btn btn-ghost" href="admin.html">View the staff dashboard →</a>
+    </div>
+    <p class="closing-note">The staff dashboard is the back office of this demo — bookings and
+      reservations you make on the storefront appear there live.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="brand" href="index.html" aria-label="Fairmark Motors home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="8" fill="var(--cobalt)"/><path d="M9 16.5l4.5 4.5L23 11.5" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-word">Fairmark<em>Motors</em></span>
+      </a>
+      <p>Every car, fully known. Certified pre-owned vehicles with fair no-haggle
+        pricing across the Greater Toronto Area and all of Ontario.</p>
+    </div>
+    <nav class="foot-col" aria-label="Inventory">
+      <strong>Inventory</strong>
+      <a href="shop.html">All vehicles</a>
+      <a href="shop.html?body=SUV">SUVs</a>
+      <a href="shop.html?body=Sedan">Sedans</a>
+      <a href="shop.html?body=Coupe">Coupes</a>
+    </nav>
+    <nav class="foot-col" aria-label="Company">
+      <strong>Company</strong>
+      <a href="#how">How it works</a>
+      <a href="#financing">Financing</a>
+      <a href="#sell">Sell your car</a>
+      <a href="admin.html">Staff view (demo)</a>
+    </nav>
+    <div class="foot-col" aria-label="Contact">
+      <strong>Contact</strong>
+      <a href="tel:+18005550187" class="num">1-800-555-0187</a>
+      <span>Toronto, Ontario (fictional)</span>
+      <span>Mon–Sat · 9 AM – 7 PM</span>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <p>© Fairmark Motors — a fictional dealership. <strong>Showcase build by
+      <a href="https://simplitechpro.com" rel="noopener">SimpliTechPro</a></strong> — every vehicle,
+      price, review, and form on this site is a demo. Payments run in test mode; nothing is sent.</p>
+  </div>
+</footer>
+
+<script src="js/data.js?v=2"></script>
+<script src="js/main.js?v=4"></script>
+</body>
+</html>

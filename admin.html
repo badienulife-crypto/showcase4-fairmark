@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Staff Dashboard (Demo) — Fairmark Motors</title>
+<meta name="description" content="Demo staff dashboard for the Fairmark Motors showcase build — sample data only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="%231A1D21"/><path d="M9 16.5l4.5 4.5L23 11.5" fill="none" stroke="%231F5FFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
+</head>
+<body class="adm-body">
+
+<!-- ============ ADMIN TOP BAR ============ -->
+<header class="adm-top">
+  <div class="adm-top-inner">
+    <a class="brand" href="index.html" aria-label="Fairmark Motors home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="8" fill="var(--ink)"/><path d="M9 16.5l4.5 4.5L23 11.5" fill="none" stroke="var(--cobalt)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-word">Fairmark<em>Staff</em></span>
+    </a>
+    <span class="adm-badge">Staff view · Demo</span>
+    <div class="adm-top-right">
+      <a class="adm-back" href="index.html">← Storefront</a>
+      <button class="btn btn-ghost btn-sm" id="admSignOut" hidden>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ LOGIN (fake gate) ============ -->
+<main class="adm-login" id="admLogin">
+  <form class="adm-login-card" id="admLoginForm">
+    <h1>Staff sign-in</h1>
+    <p class="adm-login-sub">This is the back-office demo. Use the demo credentials below — no real
+      account exists.</p>
+    <label class="adm-field">Username
+      <input id="admUser" type="text" autocomplete="off" placeholder="demo">
+    </label>
+    <label class="adm-field">Password
+      <input id="admPass" type="password" autocomplete="off" placeholder="demo">
+    </label>
+    <p class="wz-err" id="admLoginErr" hidden></p>
+    <button class="btn btn-primary" type="submit">Sign in</button>
+    <button class="wz-fill" type="button" id="admFill">Fill demo credentials (demo / demo)</button>
+  </form>
+</main>
+
+<!-- ============ CONSOLE ============ -->
+<div class="adm-app" id="admApp" hidden>
+  <nav class="adm-side" aria-label="Dashboard sections">
+    <button class="adm-tab is-on" data-panel="dash">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="3" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+      Dashboard</button>
+    <button class="adm-tab" data-panel="inv">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16l2.4-5.4A2 2 0 018.2 9.4h7.6a2 2 0 011.8 1.2L20 16M4 16h16v3.4a1 1 0 01-1 1H5a1 1 0 01-1-1V16z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="18" r=".9" fill="currentColor"/><circle cx="16.5" cy="18" r=".9" fill="currentColor"/></svg>
+      Inventory <em class="adm-count" id="cInv"></em></button>
+    <button class="adm-tab" data-panel="leads">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 20c.8-3.6 3.6-5.4 7-5.4s6.2 1.8 7 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Leads <em class="adm-count" id="cLeads"></em></button>
+    <button class="adm-tab" data-panel="book">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Bookings <em class="adm-count" id="cBook"></em></button>
+    <button class="adm-tab adm-tab--reset" id="admReset">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 108-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 4v5h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Reset demo data</button>
+  </nav>
+
+  <main class="adm-main">
+    <!-- DASHBOARD -->
+    <section class="adm-panel" id="panel-dash">
+      <h1 class="adm-h1">Dashboard</h1>
+      <p class="adm-sub">Sample figures plus everything the storefront sent this session.</p>
+      <div class="kpis" id="kpis"></div>
+      <div class="adm-duo">
+        <div class="adm-card">
+          <div class="adm-card-head">
+            <strong>Cars sold — last 8 weeks</strong>
+            <span class="adm-chip-lite">Sample data</span>
+          </div>
+          <div id="soldChart"></div>
+        </div>
+        <div class="adm-card">
+          <div class="adm-card-head">
+            <strong>Live from the storefront</strong>
+            <span class="adm-chip-live">This session</span>
+          </div>
+          <ul class="adm-feed" id="liveFeed"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVENTORY -->
+    <section class="adm-panel" id="panel-inv" hidden>
+      <div class="adm-panel-head">
+        <div>
+          <h1 class="adm-h1">Inventory</h1>
+          <p class="adm-sub" id="invSub"></p>
+        </div>
+        <button class="btn btn-primary btn-sm" id="admAdd">+ Add vehicle</button>
+      </div>
+      <div class="adm-tablewrap">
+        <table class="adm-table" id="invTable">
+          <thead><tr>
+            <th>Vehicle</th><th class="num">Price</th><th class="num">Mileage</th>
+            <th>Status</th><th class="adm-actions-col"><span class="sr-only">Actions</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- LEADS -->
+    <section class="adm-panel" id="panel-leads" hidden>
+      <h1 class="adm-h1">Leads</h1>
+      <p class="adm-sub">Enquiries from the storefront land here the moment they happen.</p>
+      <div class="adm-tablewrap">
+        <table class="adm-table" id="leadsTable">
+          <thead><tr>
+            <th>Name</th><th>Vehicle of interest</th><th>Source</th><th>Received</th>
+            <th>Status</th><th class="adm-actions-col"><span class="sr-only">Actions</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- BOOKINGS -->
+    <section class="adm-panel" id="panel-book" hidden>
+      <h1 class="adm-h1">Bookings</h1>
+      <p class="adm-sub">Test drives and deposit reservations — storefront bookings appear instantly.</p>
+      <div class="adm-tablewrap">
+        <table class="adm-table" id="bookTable">
+          <thead><tr>
+            <th>Type</th><th>Vehicle</th><th>When / hold</th><th>Customer</th><th>Status</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="adm-banner">STAFF DASHBOARD DEMO — SAMPLE DATA + THIS SESSION'S STOREFRONT ACTIVITY · NOTHING IS REAL</div>
+
+<footer class="footer-lite adm-footer">
+  <p><strong>Fairmark Motors is a fictional dealership.</strong> This is a showcase build by
+    <a href="https://simplitechpro.com" rel="noopener">SimpliTechPro</a> — every vehicle, price, and form on this site is a demo.</p>
+</footer>
+
+<script src="js/data.js?v=2"></script>
+<script src="js/admin.js?v=1"></script>
+</body>
+</html>

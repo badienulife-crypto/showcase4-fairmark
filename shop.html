@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Inventory — Fairmark Motors | Certified Pre-Owned Cars &amp; SUVs</title>
+<meta name="description" content="Browse Fairmark Motors certified pre-owned inventory. Instant filters, fair no-haggle prices, financing built in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="%231F5FFF"/><path d="M9 16.5l4.5 4.5L23 11.5" fill="none" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
+</head>
+<body class="page-shop">
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Fairmark Motors home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="8" fill="var(--cobalt)"/><path d="M9 16.5l4.5 4.5L23 11.5" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-word">Fairmark<em>Motors</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="shop.html" aria-current="page">Inventory</a>
+      <a href="index.html#financing">Financing</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#sell">Sell your car</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+18005550187">1-800-555-0187</a>
+      <a class="btn btn-primary btn-sm" href="index.html#financing">Get financing</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="shop.html">Inventory</a>
+    <a href="index.html#financing">Financing</a>
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#sell">Sell your car</a>
+    <a class="btn btn-primary" href="index.html#financing">Get financing</a>
+  </div>
+</header>
+
+<main class="shop">
+  <div class="shop-head">
+    <div>
+      <h1>Inventory</h1>
+      <p class="shop-sub">Every car certified, priced fairly, fully documented. <span class="num" id="headCount"></span></p>
+    </div>
+    <div class="shop-tools">
+      <button class="btn btn-ghost btn-sm shop-filter-toggle" id="filterToggle" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Filters
+      </button>
+      <label class="sort-label" for="sortSel">Sort</label>
+      <select id="sortSel" class="sort-select">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="year-desc">Year: newest</option>
+        <option value="km-asc">Mileage: lowest</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="shop-body">
+    <!-- ============ FILTER RAIL ============ -->
+    <aside class="filters" id="filterRail" aria-label="Inventory filters">
+      <div class="f-head">
+        <strong>Filters</strong>
+        <button class="f-clear" id="clearFilters" type="button">Clear all</button>
+        <button class="f-close" id="filterClose" type="button" aria-label="Close filters">&times;</button>
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="fSearch">Search</label>
+        <input type="search" id="fSearch" placeholder="Make, model, colour…">
+      </div>
+
+      <div class="f-group">
+        <span class="f-label">Make</span>
+        <div class="f-checks" id="fMake"></div>
+      </div>
+
+      <div class="f-group">
+        <span class="f-label">Price range</span>
+        <div class="f-range num" id="priceLabels"><span id="priceMinLbl"></span><span id="priceMaxLbl"></span></div>
+        <div class="dual-range">
+          <input type="range" id="priceMin" step="1000">
+          <input type="range" id="priceMax" step="1000">
+        </div>
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="fYear">Year (minimum)</label>
+        <select id="fYear"><option value="">Any year</option></select>
+      </div>
+
+      <div class="f-group">
+        <span class="f-label">Body type</span>
+        <div class="f-checks" id="fBody"></div>
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="fKm">Max mileage</label>
+        <select id="fKm">
+          <option value="">Any mileage</option>
+          <option value="40000">Under 40,000 km</option>
+          <option value="60000">Under 60,000 km</option>
+          <option value="80000">Under 80,000 km</option>
+        </select>
+      </div>
+
+      <div class="f-group">
+        <span class="f-label">Drivetrain</span>
+        <div class="f-checks" id="fDrive"></div>
+      </div>
+
+      <button class="btn btn-primary f-apply" id="filterApply" type="button">Show results</button>
+    </aside>
+    <div class="filters-overlay" id="filterOverlay" hidden></div>
+
+    <!-- ============ RESULTS ============ -->
+    <section class="results">
+      <p class="results-count" aria-live="polite"><strong class="num" id="resultCount"></strong>&nbsp;<span id="resultWord">vehicles</span></p>
+      <div class="veh-grid" id="vehGrid"></div>
+      <div class="empty" id="emptyState" hidden>
+        <svg viewBox="0 0 24 24" width="42" height="42" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h3>No matches in stock</h3>
+        <p>Try widening the price range or clearing a filter — inventory changes weekly.</p>
+        <button class="btn btn-ghost" id="emptyClear" type="button">Clear all filters</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer-lite">
+  <p><strong>Fairmark Motors is a fictional dealership.</strong> This is a showcase build by
+    <a href="https://simplitechpro.com" rel="noopener">SimpliTechPro</a> — every vehicle, price, and form on this site is a demo. <a href="admin.html">Staff view (demo)</a></p>
+</footer>
+
+<script src="js/data.js?v=2"></script>
+<script src="js/main.js?v=4"></script>
+<script src="js/shop.js?v=1"></script>
+</body>
+</html>
